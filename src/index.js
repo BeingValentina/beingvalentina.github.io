@@ -23,28 +23,24 @@ import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss?v=1.1.0";
 import "assets/demo/demo.css";
 
-import Index from "views/Index.js";
-import LandingPage from "views/examples/LandingPage.js";
-import RegisterPage from "views/examples/RegisterPage.js";
-import ProfilePage from "views/examples/ProfilePage.js";
+import HomePage from "views/HomePage.js";
+import ResumePage from "./views/ResumePage";
+import ReelPage from "./views/ReelPage";
+import AboutPage from "./views/AboutPage";
+import ContactPage from "views/ContactPage.js";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/components" render={props => <Index {...props} />} />
+      <Route path="/resume" render={props => <ResumePage {...props} />}/>
+      <Route path="/reel" render={props => <ReelPage {...props} />}/>
+      <Route path="/about" render={props => <AboutPage {...props} />}/>
+      <Route path="/contact" render={props => <ContactPage {...props} />}/>
+      <Redirect from="/:extra" to="/"/>
       <Route
-        path="/landing-page"
-        render={props => <LandingPage {...props} />}
+        path="/"
+        render={props => <HomePage {...props} />}
       />
-      <Route
-        path="/register-page"
-        render={props => <RegisterPage {...props} />}
-      />
-      <Route
-        path="/profile-page"
-        render={props => <ProfilePage {...props} />}
-      />
-      <Redirect from="/" to="/components" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

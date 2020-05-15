@@ -44,7 +44,7 @@ import {
 } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import ExamplesNavbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
 
 const carouselItems = [
@@ -83,7 +83,6 @@ class ProfilePage extends React.Component {
         ps = new PerfectScrollbar(tables[i]);
       }
     }
-    document.body.classList.toggle("profile-page");
   }
   componentWillUnmount() {
     if (navigator.platform.indexOf("Win") > -1) {
@@ -91,7 +90,6 @@ class ProfilePage extends React.Component {
       document.documentElement.className += " perfect-scrollbar-off";
       document.documentElement.classList.remove("perfect-scrollbar-on");
     }
-    document.body.classList.toggle("profile-page");
   }
   toggleTabs = (e, stateName, index) => {
     e.preventDefault();
@@ -105,16 +103,6 @@ class ProfilePage extends React.Component {
         <ExamplesNavbar />
         <div className="wrapper">
           <div className="page-header">
-            <img
-              alt="..."
-              className="dots"
-              src={require("assets/img/dots.png")}
-            />
-            <img
-              alt="..."
-              className="path"
-              src={require("assets/img/path4.png")}
-            />
             <Container className="align-items-center">
               <Row>
                 <Col lg="6" md="6">

@@ -34,12 +34,12 @@ import {
 } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import ExamplesNavbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
 
 import bigChartData from "variables/charts.js";
 
-class LandingPage extends React.Component {
+class ReelPage extends React.Component {
   componentDidMount() {
     document.body.classList.toggle("landing-page");
   }
@@ -52,36 +52,6 @@ class LandingPage extends React.Component {
         <ExamplesNavbar />
         <div className="wrapper">
           <div className="page-header">
-            <img
-              alt="..."
-              className="path"
-              src={require("assets/img/blob.png")}
-            />
-            <img
-              alt="..."
-              className="path2"
-              src={require("assets/img/path2.png")}
-            />
-            <img
-              alt="..."
-              className="shapes triangle"
-              src={require("assets/img/triunghiuri.png")}
-            />
-            <img
-              alt="..."
-              className="shapes wave"
-              src={require("assets/img/waves.png")}
-            />
-            <img
-              alt="..."
-              className="shapes squares"
-              src={require("assets/img/patrat.png")}
-            />
-            <img
-              alt="..."
-              className="shapes circle"
-              src={require("assets/img/cercuri.png")}
-            />
             <div className="content-center">
               <Row className="row-grid justify-content-between align-items-center text-left">
                 <Col lg="6" md="6">
@@ -149,11 +119,6 @@ class LandingPage extends React.Component {
           </div>
           <section className="section section-lg">
             <section className="section">
-              <img
-                alt="..."
-                className="path"
-                src={require("assets/img/path4.png")}
-              />
               <Container>
                 <Row className="row-grid justify-content-between">
                   <Col className="mt-lg-5" md="5">
@@ -276,21 +241,6 @@ class LandingPage extends React.Component {
             </section>
           </section>
           <section className="section section-lg">
-            <img
-              alt="..."
-              className="path"
-              src={require("assets/img/path4.png")}
-            />
-            <img
-              alt="..."
-              className="path2"
-              src={require("assets/img/path5.png")}
-            />
-            <img
-              alt="..."
-              className="path3"
-              src={require("assets/img/path2.png")}
-            />
             <Container>
               <Row className="justify-content-center">
                 <Col lg="12">
@@ -344,11 +294,6 @@ class LandingPage extends React.Component {
             </Container>
           </section>
           <section className="section section-lg section-safe">
-            <img
-              alt="..."
-              className="path"
-              src={require("assets/img/path5.png")}
-            />
             <Container>
               <Row className="row-grid justify-content-between">
                 <Col md="5">
@@ -437,16 +382,6 @@ class LandingPage extends React.Component {
             </Container>
           </section>
           <section className="section section-lg">
-            <img
-              alt="..."
-              className="path"
-              src={require("assets/img/path4.png")}
-            />
-            <img
-              alt="..."
-              className="path2"
-              src={require("assets/img/path2.png")}
-            />
             <Col md="12">
               <Card className="card-chart card-plain">
                 <CardHeader>
@@ -470,11 +405,6 @@ class LandingPage extends React.Component {
             </Col>
           </section>
           <section className="section section-lg section-coins">
-            <img
-              alt="..."
-              className="path"
-              src={require("assets/img/path3.png")}
-            />
             <Container>
               <Row>
                 <Col md="4">
@@ -592,4 +522,4 @@ class LandingPage extends React.Component {
   }
 }
 
-export default LandingPage;
+export default ReelPage;

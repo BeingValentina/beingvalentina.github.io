@@ -242,16 +242,13 @@
 // for sharing area
 
 .btn {
-  &.btn-facebook {
-    @include social-buttons-color($facebook, $facebook-states);
-  }
   &.btn-twitter {
     @include social-buttons-color($twitter, $twitter-states);
   }
-  &.btn-dribbble {
-    @include social-buttons-color($dribbble, $dribbble-states);
+  &.btn-instagram {
+    @include social-buttons-color($instagram, $instagram-states);
   }
-  &.btn-github {
-    @include social-buttons-color($github, $github-states);
+  &.btn-imdb {
+    @include social-buttons-color($imdb, $imdb-states);
   }
 }

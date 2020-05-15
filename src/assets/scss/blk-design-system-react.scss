@@ -116,3 +116,6 @@ $asset-base-path: '../../../../assets' !default;
 // React Differences
 
 @import "blk-design-system-react/react/react-differences";
+
+// Image gallery
+@import "~react-image-gallery/styles/scss/image-gallery";

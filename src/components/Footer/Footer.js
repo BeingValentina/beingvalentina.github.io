@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
@@ -32,100 +15,42 @@ import {
 class Footer extends React.Component {
   render() {
     return (
-      <footer className="footer">
+      <footer className="footer d-flex align-items-center justify-content-center">
         <Container>
           <Row>
-            <Col md="3">
-              <h1 className="title">BLK•</h1>
-            </Col>
-            <Col md="3">
-              <Nav>
-                <NavItem>
-                  <NavLink to="/" tag={Link}>
-                    Home
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/landing-page" tag={Link}>
-                    Landing
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/register-page" tag={Link}>
-                    Register
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/profile-page" tag={Link}>
-                    Profile
-                  </NavLink>
-                </NavItem>
-              </Nav>
-            </Col>
-            <Col md="3">
-              <Nav>
-                <NavItem>
-                  <NavLink href="https://creative-tim.com/contact-us?ref=blkdsr-footer">
-                    Contact Us
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://creative-tim.com/about-us?ref=blkdsr-footer">
-                    About Us
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://creative-tim.com/blog?ref=blkdsr-footer">
-                    Blog
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://opensource.org/licenses/MIT">
-                    License
-                  </NavLink>
-                </NavItem>
-              </Nav>
-            </Col>
-            <Col md="3">
-              <h3 className="title">Follow us:</h3>
-              <div className="btn-wrapper profile">
+            <Col className="offset-xs-1 offset-md-4 text-center" xs="10" md="4">
+              <div>
                 <Button
-                  className="btn-icon btn-neutral btn-round btn-simple"
+                  className="btn-icon btn-round btn btn-twitter btn-lg"
                   color="default"
-                  href="https://twitter.com/creativetim"
-                  id="tooltip622135962"
+                  href="https://twitter.com/beingvalentina"
                   target="_blank"
                 >
                   <i className="fab fa-twitter" />
                 </Button>
-                <UncontrolledTooltip delay={0} target="tooltip622135962">
-                  Follow us
-                </UncontrolledTooltip>
                 <Button
-                  className="btn-icon btn-neutral btn-round btn-simple"
+                  className="btn-icon btn-round btn btn-instagram btn-lg"
                   color="default"
-                  href="https://www.facebook.com/creativetim"
-                  id="tooltip230450801"
+                  href="https://twitter.com/beingvalentina"
                   target="_blank"
                 >
-                  <i className="fab fa-facebook-square" />
+                  <i className="fab fa-instagram" />
                 </Button>
-                <UncontrolledTooltip delay={0} target="tooltip230450801">
-                  Like us
-                </UncontrolledTooltip>
                 <Button
-                  className="btn-icon btn-neutral btn-round btn-simple"
+                  className="btn-icon btn-round btn btn-imdb btn-lg"
                   color="default"
-                  href="https://dribbble.com/creativetim"
-                  id="tooltip318450378"
+                  href="http://www.imdb.me/valentinaguerra"
                   target="_blank"
                 >
-                  <i className="fab fa-dribbble" />
+                  <i className="fab fa-imdb" />
                 </Button>
-                <UncontrolledTooltip delay={0} target="tooltip318450378">
-                  Follow us
-                </UncontrolledTooltip>
               </div>
+            </Col>
+          </Row>
+          <br/>
+          <Row>
+            <Col className="offset-xs-1 offset-md-4 text-center" xs="10" md="4">
+              ©2020 Valentina Guerra
             </Col>
           </Row>
         </Container>
