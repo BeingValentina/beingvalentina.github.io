@@ -1,23 +1,6 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link } from "react-router-dom";
-// reactstrap components
+
 import {
   Collapse,
   NavbarBrand,
@@ -114,7 +97,7 @@ class PagesNavbar extends React.Component {
             <div className="navbar-collapse-header">
               <Row>
                 <Col className="collapse-brand" xs="6">
-                  <a href="#" onClick={e => e.preventDefault()}>
+                  <a href="/" onClick={e => e.preventDefault()}>
                     Valentina Guerra
                   </a>
                 </Col>

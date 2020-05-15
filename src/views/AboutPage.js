@@ -35,8 +35,6 @@ import {
 import ExamplesNavbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
 
-import bigChartData from "variables/charts.js";
-
 class AboutPage extends React.Component {
   componentDidMount() {
     document.body.classList.toggle("landing-page");

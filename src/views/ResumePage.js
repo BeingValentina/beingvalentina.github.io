@@ -18,8 +18,6 @@ import {
 import ExamplesNavbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
 
-import bigChartData from "variables/charts.js";
-
 class ResumePage extends React.Component {
   componentDidMount() {
     document.body.classList.toggle("landing-page");

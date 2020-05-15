@@ -1,15 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// reactstrap components
+
 import {
   Button,
-  NavItem,
-  NavLink,
-  Nav,
   Container,
   Row,
   Col,
-  UncontrolledTooltip
 } from "reactstrap";
 
 class Footer extends React.Component {
