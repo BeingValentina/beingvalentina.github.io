@@ -109,11 +109,18 @@
         }
     }
 
-  &.card-coin {
+  &.card-resume {
     border: 2px solid $default;
 
     .card-header {
-      margin: -100px auto 20px;
+      margin: -43px auto 0px;
+    }
+
+    .card-body {
+      .react-pdf__Page__canvas {
+        width: 100% !important;
+        height: auto !important;
+      }
     }
 
     img {
@@ -150,7 +157,7 @@
 }
 
 @include media-breakpoint-down(xs) {
-  .card.card-coin{
+  .card.card-resume{
     margin-top: 80px;
   }
 }
