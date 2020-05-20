@@ -12,6 +12,9 @@ import PagesNavbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
 
 import ImageGallery from "react-image-gallery";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faVideo} from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
 
 const galleryImages = [
   {
@@ -49,7 +52,28 @@ class HomePage extends React.Component {
         <PagesNavbar />
         <Container>
           <Row className="page-header">
-            <Col md="6" className="align-self-center">
+            <Col xs="12" className="align-self-center d-md-none">
+              <Row className="justify-content-center">
+                <ImageGallery
+                  items={galleryImages}
+                  showNav={false}
+                  thumbnailPosition="right"
+                  showPlayButton={false}
+                  autoPlay={false}
+                  slideOnThumbnailOver={true}
+                />
+              </Row>
+              <Row className="justify-content-center pt-3">
+                <Button
+                  className="btn-simple"
+                  color="primary"
+                  tag={Link} to="/reel"
+                >
+                  <FontAwesomeIcon icon={faVideo}/> View Reel
+                </Button>
+              </Row>
+            </Col>
+            <Col md="7" className="align-self-center d-none d-md-block">
               <Row className="justify-content-center">
                 <ImageGallery
                   items={galleryImages}
@@ -60,34 +84,16 @@ class HomePage extends React.Component {
                 />
               </Row>
             </Col>
-            <Col md="6" className="align-self-center d-none d-md-block">
-              <h1 className="profile-title text-left">Projects</h1>
-              <h5 className="text-on-back">02</h5>
-              <p className="profile-description text-left">
-                An artist of considerable range, Ryan — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes,
-                performs and records all of his own music, giving it a warm,
-                intimate feel with a solid groove structure. An artist of
-                considerable range.
-              </p>
-              <div className="btn-wrapper pt-3">
+            <Col md="5" className="align-self-center d-none d-md-block">
+              <Row className="justify-content-center pt-3">
                 <Button
                   className="btn-simple"
                   color="primary"
-                  href="#pablo"
-                  onClick={e => e.preventDefault()}
+                  tag={Link} to="/reel"
                 >
-                  <i className="tim-icons icon-book-bookmark" /> Bookmark
+                  <FontAwesomeIcon icon={faVideo}/> View Reel
                 </Button>
-                <Button
-                  className="btn-simple"
-                  color="info"
-                  href="#pablo"
-                  onClick={e => e.preventDefault()}
-                >
-                  <i className="tim-icons icon-bulb-63" /> Check it!
-                </Button>
-              </div>
+              </Row>
             </Col>
           </Row>
         </Container>

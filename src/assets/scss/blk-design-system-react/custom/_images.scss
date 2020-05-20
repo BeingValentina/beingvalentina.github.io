@@ -13,16 +13,19 @@ img{
 }
 
 .page-header {
-  .image-gallery-slide {
-    .image-gallery-image {
-      height: 100%;
-      width: auto;
+  .image-gallery {
+    width: 100%;
+    .image-gallery-slide {
+      .image-gallery-image {
+        height: 100%;
+        width: auto;
+      }
     }
-  }
-  .image-gallery-thumbnail {
-    .image-gallery-thumbnail-image {
-      height: 100%;
-      width: auto;
+    .image-gallery-thumbnail {
+      .image-gallery-thumbnail-image {
+        height: 100%;
+        width: auto;
+      }
     }
   }
 }
