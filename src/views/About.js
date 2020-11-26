@@ -56,7 +56,7 @@ class About extends React.Component {
                             <img
                               className="img-fluid"
                               src={require("assets/img/headshots/about.jpg")}
-                            />
+                             alt="..."/>
                           </Col>
                         </Row>
                       </Col>

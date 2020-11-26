@@ -15,7 +15,7 @@ import {
   Input,
   InputGroup,
   InputGroupAddon,
-  InputGroupText, Label,
+  InputGroupText,
   Row,
 } from "reactstrap";
 
@@ -71,7 +71,7 @@ class Contact extends React.Component {
                               <p className="description">
                                 <span className="font-weight-bold">Agent</span><br/>
                                 90210 Talent Agency<br/>
-                                <a href="mailto:agents@90210talent.com" target="_blank">
+                                <a href="mailto:agents@90210talent.com" target="_blank" rel="noopener noreferrer">
                                   agents@90210talent.com
                                 </a><br/>
                                 <a href="tel:818-928-5717">818.928.5717</a>
@@ -79,7 +79,7 @@ class Contact extends React.Component {
                               <p className="description">
                                 <span className="font-weight-bold">Manager</span><br/>
                                 Stein Entertainment Group<br/>
-                                <a href="mailto:info@steinentertainment.com" target="_blank">
+                                <a href="mailto:info@steinentertainment.com" target="_blank" rel="noopener noreferrer">
                                   info@steinentertainment.com
                                 </a><br/>
                                 <a href="tel:323-822-1400">323.822.1400</a>
@@ -95,7 +95,7 @@ class Contact extends React.Component {
                               <p className="description">
                                 <span className="font-weight-bold">Agent</span><br/>
                                 NYLO Model & Talent Agency<br/>
-                                <a href="mailto:nicole@nylotalent.com" target="_blank">
+                                <a href="mailto:nicole@nylotalent.com" target="_blank" rel="noopener noreferrer">
                                   nicole@nylotalent.com
                                 </a><br/>
                                 <a href="tel:510-588-8762">510.588.8762</a>

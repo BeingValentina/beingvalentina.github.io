@@ -142,7 +142,7 @@ class ColorNavbar extends React.Component {
                             href="http://www.imdb.me/valentinaguerra"
                             target="_blank"
                     >
-                      <img className="img-fluid" src={require("assets/img/icons/imdb.png")}/>
+                      <img className="img-fluid" src={require("assets/img/icons/imdb.png")} alt="..."/>
                     </Button>
                   </li>
                 </ul>

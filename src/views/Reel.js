@@ -4,7 +4,6 @@ import React from "react";
 import ColorNavbar from "components/Navbars/ColorNavbar.js";
 
 import {
-  Button,
   Row,
 } from "reactstrap";
 
