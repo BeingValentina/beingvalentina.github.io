@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 // styles
 import "assets/css/nucleo-icons.css";
@@ -15,7 +15,7 @@ import About from "views/About.js";
 import Contact from "views/Contact.js";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter basename="/" hashType="noslash">
     <Switch>
       <Route path="/resume" render={props => <Resume {...props} />} />
       <Route path="/reel" render={props => <Reel {...props} />} />
@@ -23,6 +23,6 @@ ReactDOM.render(
       <Route path="/contact" render={props => <Contact {...props} />} />
       <Route path="/" render={props => <Index {...props} />} />
     </Switch>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById("root")
 );

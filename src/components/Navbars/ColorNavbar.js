@@ -96,24 +96,23 @@ class ColorNavbar extends React.Component {
         <Navbar className={"fixed-top " + this.state.navbarColor} expand="lg">
           <Container>
             <div className="navbar-translate">
-              <NavbarBrand to="/" tag={Link} id="tooltip6619950104">
-                <span>Valentina Guerra • </span>
-                SAG-AFTRA
-              </NavbarBrand>
               <button className="navbar-toggler" id="navigation">
                 <span className="navbar-toggler-bar bar1" />
                 <span className="navbar-toggler-bar bar2" />
                 <span className="navbar-toggler-bar bar3" />
               </button>
+              <NavbarBrand to="/" tag={Link}>
+                <span>Valentina Guerra • </span>
+                SAG-AFTRA
+              </NavbarBrand>
             </div>
             <UncontrolledCollapse navbar toggler="#navigation">
               <div className="navbar-collapse-header">
                 <Row>
                   <Col className="collapse-brand" xs="6">
-                    <a href="/" onClick={e => e.preventDefault()}>
-                      <span>Valentina Guerra • </span>
-                      SAG-AFTRA
-                    </a>
+                    <Link to="/">
+                      Valentina Guerra • SAG-AFTRA
+                    </Link>
                   </Col>
                   <Col className="collapse-close text-right" xs="6">
                     <button className="navbar-toggler" id="navigation">
@@ -122,58 +121,56 @@ class ColorNavbar extends React.Component {
                   </Col>
                 </Row>
               </div>
-              <Nav className="mr-auto" navbar>
-                <ul className="navbar-nav social-buttons">
-                  <li>
-                    <Button className="btn-icon" color="instagram"
-                            href="https://www.instagram.com/beingvalentina/"
-                            target="_blank"
-                    >
-                      <i className="fab fa-instagram" />
-                    </Button>
-                  </li>
-                  <li>
-                    <Button className="btn-icon" color="twitter"
-                            href="https://twitter.com/beingvalentina"
-                            target="_blank"
-                    >
-                      <i className="fab fa-twitter" />
-                    </Button>
-                  </li>
-                  <li>
-                    <Button className="btn-icon" color="imdb"
-                            href="http://www.imdb.me/valentinaguerra"
-                            target="_blank"
-                    >
-                      <img className="img-fluid" src={require("assets/img/icons/imdb.png")} alt="..."/>
-                    </Button>
-                  </li>
-                </ul>
-              </Nav>
-              <Nav className="ml-auto" navbar>
-                <NavItem className="active">
-                  <NavLink href="/">
+              <Nav className="mx-auto" navbar>
+                <NavItem>
+                  <Link to="" className="nav-link">
                     Home
-                  </NavLink>
+                  </Link>
                 </NavItem>
-                <NavItem className="active">
+                <NavItem>
                   <NavLink href="#" onClick={this.resumeToggle}>
                     Resume
                   </NavLink>
                 </NavItem>
-                <NavItem className="active">
+                <NavItem>
                   <NavLink href="#" onClick={this.reelToggle}>
                     Reel
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/about">
+                  <Link to="/about" className="nav-link">
                     About
-                  </NavLink>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/contact">
+                  <Link to="/contact" className="nav-link">
                     Contact
+                  </Link>
+                </NavItem>
+              </Nav>
+              <Nav className="nav navbar-right ml-auto" navbar>
+                <NavItem className="p-0">
+                  <NavLink
+                    href="https://www.instagram.com/beingvalentina/"
+                    target="_blank"
+                  >
+                    <i className="fab fa-2x fa-instagram" />
+                  </NavLink>
+                </NavItem>
+                <NavItem className="p-0">
+                  <NavLink
+                    href="https://twitter.com/beingvalentina"
+                    target="_blank"
+                  >
+                    <i className="fab fa-twitter" />
+                  </NavLink>
+                </NavItem>
+                <NavItem className="p-0">
+                  <NavLink
+                    href="http://www.imdb.me/valentinaguerra"
+                    target="_blank"
+                  >
+                    <i className="fab fa-imdb" />
                   </NavLink>
                 </NavItem>
               </Nav>
