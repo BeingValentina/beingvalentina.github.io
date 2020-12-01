@@ -4,7 +4,7 @@ import React from "react";
 import ColorNavbar from "components/Navbars/ColorNavbar.js";
 
 import {
-  Row,
+  Row
 } from "reactstrap";
 
 import ReactPlayer from 'react-player/vimeo'

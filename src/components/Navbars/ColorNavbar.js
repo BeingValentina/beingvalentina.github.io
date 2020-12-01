@@ -13,8 +13,11 @@ import {
   Row,
   Col, ModalBody, ModalFooter, Modal,
 } from "reactstrap";
-import {Document, Page} from "react-pdf/dist/umd/entry.webpack";
+
 import ModalVideo from "react-modal-video";
+import {Document, Page, pdfjs} from "react-pdf";
+import resume from "assets/docs/ValentinaGuerra.pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 class ColorNavbar extends React.Component {
   constructor(props, context) {
@@ -181,7 +184,7 @@ class ColorNavbar extends React.Component {
           <ModalBody>
             <div className="container-fluid">
               <Row>
-                <Document className="resume" file={require("assets/docs/ValentinaGuerra.pdf")} onClick={() => {window.open("/ValentinaGuerra.pdf", "_blank")}}>
+                <Document className="resume" file={resume} onClick={() => {window.open("/ValentinaGuerra.pdf", "_blank")}}>
                   <Page width={this.state.resumeWidth} pageNumber={1} />
                 </Document>
               </Row>

@@ -9,6 +9,8 @@ import {
   Row,
 } from "reactstrap";
 
+import headshot from "assets/img/headshots/about.jpg";
+
 class About extends React.Component {
   componentDidMount() {
     document.body.classList.add("sections-page");
@@ -55,7 +57,7 @@ class About extends React.Component {
                           <Col lg="9" md="6">
                             <img
                               className="img-fluid"
-                              src={require("assets/img/headshots/about.jpg")}
+                              src={headshot}
                              alt="..."/>
                           </Col>
                         </Row>

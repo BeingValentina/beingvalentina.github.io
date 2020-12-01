@@ -8,7 +8,7 @@ import {
   Row,
 } from "reactstrap";
 
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
+// import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 
 class Resume extends React.Component {
   constructor(props, context) {
@@ -50,9 +50,9 @@ class Resume extends React.Component {
                 <div className="content-center">
                   <Row>
                     <div className="mx-auto">
-                      <Document className="resume" file={require("assets/docs/ValentinaGuerra.pdf")} onClick={() => {window.open("/ValentinaGuerra.pdf", "_blank")}}>
-                        <Page width={this.state.resumeWidth} pageNumber={1} />
-                      </Document>
+                      {/*<Document className="resume" file={require("assets/docs/ValentinaGuerra.pdf")} onClick={() => {window.open("/ValentinaGuerra.pdf", "_blank")}}>*/}
+                      {/*  <Page width={this.state.resumeWidth} pageNumber={1} />*/}
+                      {/*</Document>*/}
                       <Button className="my-3" color="primary" href="/ValentinaGuerra.pdf" target="_blank">
                         <i className="fas fa-download"/> Download
                       </Button>

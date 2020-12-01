@@ -1,5 +1,12 @@
 import React from "react";
 
+// Images
+import gallery1 from "assets/img/headshots/gallery1.jpg";
+import gallery2 from "assets/img/headshots/gallery2.jpg";
+import gallery3 from "assets/img/headshots/gallery3.jpg";
+import gallery4 from "assets/img/headshots/gallery4.jpg";
+import gallery5 from "assets/img/headshots/gallery5.jpg";
+
 // core components
 import ColorNavbar from "components/Navbars/ColorNavbar.js";
 
@@ -10,73 +17,74 @@ import {
 } from "reactstrap";
 import Slick from "react-slick";
 
-class Index extends React.Component {
-  PrevButton = props => {
-    return (
-      <Button
-        className="btn-round btn-icon btn-simple slick-prev slick-arrow"
-        color="primary"
-        aria-label="Previous"
-        type="button"
-        onClick={props.onClick}
-      >
-        <i className="tim-icons icon-minimal-left" />
-      </Button>
-    );
-  };
+// custom previous button for the slick component
+const PrevButton = props => {
+  return (
+    <Button
+      className="btn-round btn-icon btn-simple slick-prev slick-arrow"
+      color="primary"
+      aria-label="Previous"
+      type="button"
+      onClick={props.onClick}
+    >
+      <i className="tim-icons icon-minimal-left" />
+    </Button>
+  );
+};
 // custom next button for the slick component
-  NextButton = props => {
-    return (
-      <Button
-        className="btn-round btn-icon btn-simple slick-next slick-arrow"
-        color="primary"
-        aria-label="Next"
-        type="button"
-      >
-        <i className="tim-icons icon-minimal-right" onClick={props.onClick} />
-      </Button>
-    );
-  };
+const NextButton = props => {
+  return (
+    <Button
+      className="btn-round btn-icon btn-simple slick-next slick-arrow"
+      color="primary"
+      aria-label="Next"
+      type="button"
+    >
+      <i className="tim-icons icon-minimal-right" onClick={props.onClick} />
+    </Button>
+  );
+};
 
-  slickHeader3Settings = {
-    dots: false,
-    infinite: true,
-    centerMode: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    focusOnSelect: true,
-    prevArrow: <this.PrevButton />,
-    nextArrow: <this.NextButton />,
-    className: "center slider slick-buttons-under",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
+let slickHeader3Settings = {
+  dots: false,
+  infinite: true,
+  centerMode: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  focusOnSelect: true,
+  prevArrow: <PrevButton />,
+  nextArrow: <NextButton />,
+  className: "center slider slick-buttons-under",
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true
       }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
-    ]
-  };
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+};
 
+class Index extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -149,12 +157,12 @@ class Index extends React.Component {
                       </Button>
                     </Col>
                     <Col md="12">
-                      <Slick ref={slider => (this.slider = slider)} {...this.slickHeader3Settings}>
+                      <Slick {...slickHeader3Settings}>
                         <div>
                           <img
                             alt="..."
                             height="500"
-                            src={require("assets/img/headshots/gallery1.jpg")}
+                            src={gallery1}
                             className="img-fluid"
                           />
                         </div>
@@ -162,7 +170,7 @@ class Index extends React.Component {
                           <img
                             alt="..."
                             height="500"
-                            src={require("assets/img/headshots/gallery2.jpg")}
+                            src={gallery2}
                             className="img-fluid"
                           />
                         </div>
@@ -170,7 +178,7 @@ class Index extends React.Component {
                           <img
                             alt="..."
                             height="500"
-                            src={require("assets/img/headshots/gallery3.jpg")}
+                            src={gallery3}
                             className="img-fluid"
                           />
                         </div>
@@ -178,7 +186,7 @@ class Index extends React.Component {
                           <img
                             alt="..."
                             height="500"
-                            src={require("assets/img/headshots/gallery4.jpg")}
+                            src={gallery4}
                             className="img-fluid"
                           />
                         </div>
@@ -186,7 +194,7 @@ class Index extends React.Component {
                           <img
                             alt="..."
                             height="500"
-                            src={require("assets/img/headshots/gallery5.jpg")}
+                            src={gallery5}
                             className="img-fluid"
                           />
                         </div>

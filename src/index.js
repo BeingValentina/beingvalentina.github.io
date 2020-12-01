@@ -9,10 +9,10 @@ import "assets/demo/demo.css";
 import "assets/demo/react-demo.css";
 
 import Index from "views/Index.js";
-import Resume from "./views/Resume";
-import Reel from "./views/Reel";
-import About from "./views/About";
-import Contact from "./views/Contact";
+import Resume from "views/Resume.js";
+import Reel from "views/Reel.js";
+import About from "views/About.js";
+import Contact from "views/Contact.js";
 
 ReactDOM.render(
   <BrowserRouter>
