@@ -1548,3 +1548,250 @@
   -webkit-animation-name: Floatingx;
   -moz-animation-name: Floatingx;
 }
+
+/* ===== Valentina Guerra Custom Styles ===== */
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  position: relative;
+}
+
+.hero-title-section {
+  padding: 100px 0 50px;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #e94560 0%, #ba1f33 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+}
+
+.hero-btn {
+  margin: 0 10px;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(233, 69, 96, 0.4);
+}
+
+/* Carousel Section */
+.carousel-section {
+  padding: 20px 0;
+}
+
+.carousel-heading {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.carousel-item-wrapper {
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-img {
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.carousel-item-wrapper:hover .carousel-img {
+  transform: scale(1.05);
+  box-shadow: 0 15px 50px rgba(233, 69, 96, 0.4);
+}
+
+/* Credits Page Styles */
+.credits-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  padding: 100px 0;
+}
+
+.credits-header {
+  padding: 50px 0;
+}
+
+.credits-header .title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #e94560 0%, #ba1f33 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.credits-header .description {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.credits-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(233, 69, 96, 0.3);
+}
+
+.section-title i {
+  color: #e94560;
+}
+
+.credit-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  height: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.credit-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(233, 69, 96, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(233, 69, 96, 0.2);
+}
+
+.credit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.credit-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.credit-year {
+  font-size: 0.9rem;
+  padding: 5px 12px;
+  background: rgba(233, 69, 96, 0.2);
+  border: 1px solid #e94560;
+  color: #e94560;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.credit-role {
+  color: #e94560;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.credit-type {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0;
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fadeInUp-delay {
+  animation: fadeInUp 0.8s ease-out 0.2s;
+  animation-fill-mode: backwards;
+}
+
+.animate-fadeInUp-delay-2 {
+  animation: fadeInUp 0.8s ease-out 0.4s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out 0.6s;
+  animation-fill-mode: backwards;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .hero-btn {
+    margin: 10px 5px;
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .carousel-heading {
+    font-size: 1.5rem;
+  }
+
+  .credits-header .title {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .credit-title {
+    font-size: 1.2rem;
+  }
+}
