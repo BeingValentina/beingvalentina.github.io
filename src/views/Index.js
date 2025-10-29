@@ -131,71 +131,75 @@ class Index extends React.Component {
         <div className="wrapper" ref="wrapper">
           <div className="cd-section" id="headers">
             <div className="header header-3">
-              <div className="page-header header-filter">
+              <div className="page-header header-filter hero-section">
                 <div className="content-center">
-                  <Row>
-                    <Col
-                      className="ml-auto mr-auto positioned"
-                      lg="5"
-                      md="8"
-                      xs="12"
-                    >
-                      <Button
-                        color="primary"
-                        onClick={this.resumeToggle}
-                        size="lg"
-                      >
-                        <i className="fas fa-file-alt"/> View Resume
-                      </Button>
-                      <br/><br/>
-                      <Button
-                        color="primary"
-                        onClick={this.reelToggle}
-                        size="lg"
-                      >
-                        <i className="fas fa-film"/> Play Reel
-                      </Button>
+                  <Row className="hero-content">
+                    <Col md="12" className="text-center hero-title-section">
+                      <h1 className="hero-title animate-fadeInUp">Valentina Guerra</h1>
+                      <h3 className="hero-subtitle animate-fadeInUp-delay">Actor • SAG-AFTRA</h3>
+                      <div className="hero-buttons animate-fadeInUp-delay-2">
+                        <Button
+                          color="primary"
+                          onClick={this.resumeToggle}
+                          size="lg"
+                          className="btn-round hero-btn"
+                        >
+                          <i className="fas fa-file-alt"/> View Resume
+                        </Button>
+                        {" "}
+                        <Button
+                          color="primary"
+                          onClick={this.reelToggle}
+                          size="lg"
+                          className="btn-round hero-btn"
+                        >
+                          <i className="fas fa-film"/> Play Reel
+                        </Button>
+                      </div>
                     </Col>
-                    <Col md="12">
+                  </Row>
+                  <Row className="mt-5">
+                    <Col md="12" className="carousel-section">
+                      <h4 className="carousel-heading text-center mb-4 animate-fadeIn">Headshots</h4>
                       <Slick {...slickHeader3Settings}>
-                        <div>
+                        <div className="carousel-item-wrapper">
                           <img
-                            alt="..."
+                            alt="Valentina Guerra Headshot 1"
                             height="500"
                             src={gallery1}
-                            className="img-fluid"
+                            className="img-fluid carousel-img"
                           />
                         </div>
-                        <div>
+                        <div className="carousel-item-wrapper">
                           <img
-                            alt="..."
+                            alt="Valentina Guerra Headshot 2"
                             height="500"
                             src={gallery2}
-                            className="img-fluid"
+                            className="img-fluid carousel-img"
                           />
                         </div>
-                        <div>
+                        <div className="carousel-item-wrapper">
                           <img
-                            alt="..."
+                            alt="Valentina Guerra Headshot 3"
                             height="500"
                             src={gallery3}
-                            className="img-fluid"
+                            className="img-fluid carousel-img"
                           />
                         </div>
-                        <div>
+                        <div className="carousel-item-wrapper">
                           <img
-                            alt="..."
+                            alt="Valentina Guerra Headshot 4"
                             height="500"
                             src={gallery4}
-                            className="img-fluid"
+                            className="img-fluid carousel-img"
                           />
                         </div>
-                        <div>
+                        <div className="carousel-item-wrapper">
                           <img
-                            alt="..."
+                            alt="Valentina Guerra Headshot 5"
                             height="500"
                             src={gallery5}
-                            className="img-fluid"
+                            className="img-fluid carousel-img"
                           />
                         </div>
                       </Slick>

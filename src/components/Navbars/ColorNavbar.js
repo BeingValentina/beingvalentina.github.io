@@ -143,6 +143,11 @@ class ColorNavbar extends React.Component {
                   </Link>
                 </NavItem>
                 <NavItem>
+                  <Link to="/credits" className="nav-link">
+                    Credits
+                  </Link>
+                </NavItem>
+                <NavItem>
                   <Link to="/contact" className="nav-link">
                     Contact
                   </Link>

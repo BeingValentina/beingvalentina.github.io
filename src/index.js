@@ -13,6 +13,7 @@ import Resume from "views/Resume.js";
 import Reel from "views/Reel.js";
 import About from "views/About.js";
 import Contact from "views/Contact.js";
+import Credits from "views/Credits.js";
 
 ReactDOM.render(
   <HashRouter basename="/" hashType="noslash">
@@ -20,6 +21,7 @@ ReactDOM.render(
       <Route path="/resume" render={props => <Resume {...props} />} />
       <Route path="/reel" render={props => <Reel {...props} />} />
       <Route path="/about" render={props => <About {...props} />} />
+      <Route path="/credits" render={props => <Credits {...props} />} />
       <Route path="/contact" render={props => <Contact {...props} />} />
       <Route path="/" render={props => <Index {...props} />} />
     </Switch>
