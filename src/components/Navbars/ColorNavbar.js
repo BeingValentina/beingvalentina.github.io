@@ -23,7 +23,7 @@ import resume from "assets/docs/ValentinaGuerra.pdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-const ColorNavbar = ({ reelOpen: reelOpenProp, resumeOpen: resumeOpenProp }) => {
+const ColorNavbar = ({ reelOpen: reelOpenProp, resumeOpen: resumeOpenProp, onReelToggle, onResumeToggle }) => {
   const [navbarColor, setNavbarColor] = useState("navbar-transparent");
   const [reelOpen, setReelOpen] = useState(false);
   const [resumeOpen, setResumeOpen] = useState(false);
@@ -70,12 +70,20 @@ const ColorNavbar = ({ reelOpen: reelOpenProp, resumeOpen: resumeOpenProp }) => 
   }, [resumeOpenProp, resumeOpen, calculateResumeWidth]);
 
   const handleResumeToggle = () => {
-    setResumeOpen(!resumeOpen);
-    setResumeWidth(calculateResumeWidth());
+    if (onResumeToggle) {
+      onResumeToggle();
+    } else {
+      setResumeOpen(!resumeOpen);
+      setResumeWidth(calculateResumeWidth());
+    }
   };
 
   const handleReelToggle = () => {
-    setReelOpen(!reelOpen);
+    if (onReelToggle) {
+      onReelToggle();
+    } else {
+      setReelOpen(!reelOpen);
+    }
   };
 
   return (
@@ -115,12 +123,12 @@ const ColorNavbar = ({ reelOpen: reelOpenProp, resumeOpen: resumeOpenProp }) => 
                 </Link>
               </NavItem>
               <NavItem>
-                <NavLink href="#" onClick={handleResumeToggle} className="nav-link-modern">
+                <NavLink href="#" onClick={(e) => { e.preventDefault(); handleResumeToggle(); }} className="nav-link-modern">
                   Resume
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#" onClick={handleReelToggle} className="nav-link-modern">
+                <NavLink href="#" onClick={(e) => { e.preventDefault(); handleReelToggle(); }} className="nav-link-modern">
                   Reel
                 </NavLink>
               </NavItem>
@@ -181,8 +189,8 @@ const ColorNavbar = ({ reelOpen: reelOpenProp, resumeOpen: resumeOpenProp }) => 
         className="resume-modal"
         isOpen={resumeOpen}
         toggle={handleResumeToggle}
-        size="lg"
-        centered={false}
+        size="xl"
+        centered
       >
         <ModalBody>
           <div className="container-fluid">
@@ -190,9 +198,6 @@ const ColorNavbar = ({ reelOpen: reelOpenProp, resumeOpen: resumeOpenProp }) => 
               <Document
                 className="resume"
                 file={resume}
-                onClick={() => {
-                  window.open("/ValentinaGuerra.pdf", "_blank");
-                }}
               >
                 <Page width={resumeWidth} pageNumber={1} />
               </Document>

@@ -14,7 +14,6 @@ import {
   Form, FormGroup,
   Input,
   InputGroup,
-  InputGroupAddon,
   InputGroupText,
   Row,
 } from "reactstrap";
@@ -121,11 +120,9 @@ class Contact extends React.Component {
                                       "input-group-focus": this.state.contactNameFocus
                                     })}
                                   >
-                                    <InputGroupAddon addonType="prepend">
-                                      <InputGroupText>
-                                        <i className="tim-icons icon-single-02" />
-                                      </InputGroupText>
-                                    </InputGroupAddon>
+                                    <InputGroupText>
+                                      <i className="tim-icons icon-single-02" />
+                                    </InputGroupText>
                                     <Input
                                       aria-label="Name..."
                                       placeholder="Name..."
@@ -152,11 +149,9 @@ class Contact extends React.Component {
                                       "input-group-focus": this.state.contactEmailFocus
                                     })}
                                   >
-                                    <InputGroupAddon addonType="prepend">
-                                      <InputGroupText>
-                                        <i className="tim-icons icon-email-85" />
-                                      </InputGroupText>
-                                    </InputGroupAddon>
+                                    <InputGroupText>
+                                      <i className="tim-icons icon-email-85" />
+                                    </InputGroupText>
                                     <Input
                                       name={"_replyto"}
                                       placeholder="Email Here..."

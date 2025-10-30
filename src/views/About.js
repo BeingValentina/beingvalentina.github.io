@@ -73,21 +73,27 @@ const About = () => {
                     {/* Key Highlights */}
                     <div className="about-highlights mt-4">
                       <div className="highlight-item">
-                        <i className="fas fa-graduation-cap highlight-icon" />
+                        <div className="highlight-icon">
+                          <i className="fas fa-graduation-cap" />
+                        </div>
                         <div className="highlight-text">
                           <h6>Education</h6>
                           <p>MIT - Aerospace Engineering + Theater Arts</p>
                         </div>
                       </div>
                       <div className="highlight-item">
-                        <i className="fas fa-theater-masks highlight-icon" />
+                        <div className="highlight-icon">
+                          <i className="fas fa-theater-masks" />
+                        </div>
                         <div className="highlight-text">
                           <h6>Training</h6>
                           <p>Meisner Technique</p>
                         </div>
                       </div>
                       <div className="highlight-item">
-                        <i className="fas fa-map-marker-alt highlight-icon" />
+                        <div className="highlight-icon">
+                          <i className="fas fa-map-marker-alt" />
+                        </div>
                         <div className="highlight-text">
                           <h6>Based In</h6>
                           <p>New York City</p>

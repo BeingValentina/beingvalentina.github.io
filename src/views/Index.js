@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { Link } from "react-router-dom";
 
 // Images
 import gallery1 from "assets/img/headshots/gallery1.jpg";
@@ -15,8 +16,16 @@ import {
   Col,
   Row,
   Container,
+  Modal,
+  ModalBody,
+  ModalFooter,
 } from "reactstrap";
 import Slick from "react-slick";
+import ModalVideo from "react-modal-video";
+import { Document, Page, pdfjs } from "react-pdf";
+import resume from "assets/docs/ValentinaGuerra.pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 // custom previous button for the slick component
 const PrevButton = ({ onClick }) => {
@@ -51,10 +60,23 @@ const NextButton = ({ onClick }) => {
 const Index = () => {
   const [reelOpen, setReelOpen] = useState(false);
   const [resumeOpen, setResumeOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState(null);
+  const [resumeWidth, setResumeWidth] = useState(700);
   const wrapperRef = useRef(null);
 
+  const calculateResumeWidth = useCallback(() => {
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 500) {
+      return windowWidth - 50;
+    } else if (windowWidth < 992) {
+      return 450;
+    }
+    return 700;
+  }, []);
+
   const slickSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     centerMode: true,
     slidesToShow: 3,
@@ -93,6 +115,16 @@ const Index = () => {
     ]
   };
 
+  const openLightbox = (image) => {
+    setLightboxImage(image);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setLightboxImage(null);
+  };
+
   useEffect(() => {
     document.body.classList.add("sections-page", "index-page");
     document.documentElement.scrollTop = 0;
@@ -106,12 +138,21 @@ const Index = () => {
     };
   }, []);
 
-  const handleResumeToggle = () => setResumeOpen(!resumeOpen);
+  const handleResumeToggle = () => {
+    setResumeOpen(!resumeOpen);
+    setResumeWidth(calculateResumeWidth());
+  };
+
   const handleReelToggle = () => setReelOpen(!reelOpen);
 
   return (
     <>
-      <ColorNavbar reelOpen={reelOpen} resumeOpen={resumeOpen} />
+      <ColorNavbar
+        reelOpen={reelOpen}
+        resumeOpen={resumeOpen}
+        onReelToggle={handleReelToggle}
+        onResumeToggle={handleResumeToggle}
+      />
       <div className="wrapper" ref={wrapperRef}>
         <div className="cd-section" id="headers">
           {/* Hero Section */}
@@ -190,7 +231,7 @@ const Index = () => {
                             src={img}
                             className="carousel-image"
                           />
-                          <div className="carousel-overlay">
+                          <div className="carousel-overlay" onClick={() => openLightbox(img)}>
                             <div className="carousel-overlay-content">
                               <i className="fas fa-search-plus" />
                             </div>
@@ -209,37 +250,103 @@ const Index = () => {
             <Container>
               <Row className="text-center">
                 <Col md="4" className="quick-link-col">
-                  <a href="/#/about" className="quick-link-card">
+                  <Link to="/about" className="quick-link-card">
                     <div className="quick-link-icon">
                       <i className="fas fa-user" />
                     </div>
                     <h4>About</h4>
                     <p>Learn more about my journey from MIT to acting</p>
-                  </a>
+                  </Link>
                 </Col>
                 <Col md="4" className="quick-link-col">
-                  <a href="/#/credits" className="quick-link-card">
+                  <Link to="/credits" className="quick-link-card">
                     <div className="quick-link-icon">
                       <i className="fas fa-film" />
                     </div>
                     <h4>Credits</h4>
                     <p>View my film, television, and theater work</p>
-                  </a>
+                  </Link>
                 </Col>
                 <Col md="4" className="quick-link-col">
-                  <a href="/#/contact" className="quick-link-card">
+                  <Link to="/contact" className="quick-link-card">
                     <div className="quick-link-icon">
                       <i className="fas fa-envelope" />
                     </div>
                     <h4>Contact</h4>
                     <p>Get in touch with my representation</p>
-                  </a>
+                  </Link>
                 </Col>
               </Row>
             </Container>
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      <Modal
+        isOpen={lightboxOpen}
+        toggle={closeLightbox}
+        size="xl"
+        centered={true}
+        className="lightbox-modal"
+      >
+        <ModalBody className="p-0">
+          <button
+            className="lightbox-close"
+            onClick={closeLightbox}
+            aria-label="Close"
+          >
+            <i className="tim-icons icon-simple-remove" />
+          </button>
+          {lightboxImage && (
+            <img
+              src={lightboxImage}
+              alt="Headshot"
+              className="lightbox-image"
+            />
+          )}
+        </ModalBody>
+      </Modal>
+
+      {/* Resume Modal */}
+      <Modal
+        className="resume-modal"
+        isOpen={resumeOpen}
+        toggle={handleResumeToggle}
+        size="xl"
+        centered={true}
+      >
+        <ModalBody>
+          <div className="container-fluid">
+            <Row>
+              <Document
+                className="resume"
+                file={resume}
+              >
+                <Page width={resumeWidth} pageNumber={1} />
+              </Document>
+            </Row>
+          </div>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="primary" href="/ValentinaGuerra.pdf" target="_blank" download>
+            <i className="fas fa-download mr-2" />
+            Download Resume
+          </Button>
+          <Button color="secondary" onClick={handleResumeToggle}>
+            Close
+          </Button>
+        </ModalFooter>
+      </Modal>
+
+      {/* Reel Modal */}
+      <ModalVideo
+        channel="vimeo"
+        isOpen={reelOpen}
+        videoId={478244874}
+        onClose={handleReelToggle}
+        autoplay={true}
+      />
     </>
   );
 };
