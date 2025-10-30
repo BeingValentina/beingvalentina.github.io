@@ -7,6 +7,7 @@ import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-pro-react.scss?v1.1.0";
 import "assets/demo/demo.css";
 import "assets/demo/react-demo.css";
+import "assets/css/custom-modern-styles.css";
 
 import Index from "views/Index.js";
 import Resume from "views/Resume.js";
