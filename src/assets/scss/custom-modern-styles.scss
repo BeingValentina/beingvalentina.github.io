@@ -4,6 +4,15 @@
  */
 
 // ========================================
+// GLOBAL PAGE OVERRIDES
+// ========================================
+
+.sections-page {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+// ========================================
 // MODERN HERO SECTION
 // ========================================
 
@@ -329,12 +338,9 @@
 
 // Lightbox Modal
 .lightbox-modal {
-  display: flex !important;
-  align-items: center !important;
-
   .modal-dialog {
     max-width: 90vw;
-    margin: 1.75rem auto;
+    width: auto;
   }
 
   .modal-content {
@@ -395,12 +401,9 @@
 
 // Resume Modal
 .resume-modal {
-  display: flex !important;
-  align-items: center !important;
-
   .modal-dialog {
     max-width: 90vw;
-    margin: 1.75rem auto;
+    width: auto;
   }
 
   .modal-content {
@@ -835,10 +838,21 @@
 // CREDITS PAGE STYLES
 // ========================================
 
+.credits-page {
+  .wrapper {
+    background: linear-gradient(180deg, #0a0e27 0%, #16213e 100%);
+  }
+
+  .cd-section {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
 .credits-page-modern {
   min-height: 100vh;
   padding: 150px 0 100px;
-  background: linear-gradient(180deg, #0a0e27 0%, #16213e 100%);
+  background: transparent;
 
   .page-title {
     font-size: 3.5rem;
