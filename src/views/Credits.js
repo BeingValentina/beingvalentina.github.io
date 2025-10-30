@@ -1,37 +1,39 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 // core components
 import ColorNavbar from "components/Navbars/ColorNavbar.js";
 
 import {
   Badge,
-  Card,
-  CardBody,
+  Button,
   Col,
   Container,
   Row,
 } from "reactstrap";
 
-// Credits data - organized by category
+// Credits data - organized by category with real and placeholder data
 const creditsData = {
   film: [
     {
       title: "The Prank",
       year: "2024",
       role: "Detective Morris",
-      type: "Feature Film"
+      type: "Feature Film",
+      icon: "fa-video"
     },
     {
       title: "Autonomous",
       year: "2024",
       role: "Sarah",
-      type: "Feature Film"
+      type: "Feature Film",
+      icon: "fa-film"
     },
     {
       title: "The Last Stand",
       year: "2023",
       role: "Maria",
-      type: "Short Film"
+      type: "Short Film",
+      icon: "fa-camera"
     },
   ],
   television: [
@@ -39,13 +41,15 @@ const creditsData = {
       title: "Law & Order: SVU",
       year: "2023",
       role: "Guest Star",
-      type: "TV Series"
+      type: "TV Series",
+      icon: "fa-tv"
     },
     {
       title: "Blue Bloods",
       year: "2022",
       role: "Co-Star",
-      type: "TV Series"
+      type: "TV Series",
+      icon: "fa-tv"
     },
   ],
   theater: [
@@ -53,137 +57,136 @@ const creditsData = {
       title: "Hamlet",
       year: "2023",
       role: "Ophelia",
-      venue: "Off-Broadway Production"
+      venue: "Off-Broadway Production",
+      icon: "fa-theater-masks"
     },
     {
       title: "A Streetcar Named Desire",
       year: "2022",
       role: "Stella",
-      venue: "Regional Theater"
+      venue: "Regional Theater",
+      icon: "fa-theater-masks"
     },
   ]
 };
 
-class Credits extends React.Component {
-  componentDidMount() {
-    document.body.classList.add("sections-page");
+const CreditCard = ({ credit }) => {
+  return (
+    <Col lg="4" md="6" className="mb-4">
+      <div className="credit-card-modern">
+        <div className="credit-icon">
+          <i className={`fas ${credit.icon}`} />
+        </div>
+        <div className="d-flex justify-content-between align-items-start mb-3">
+          <h4 className="credit-title">{credit.title}</h4>
+          <Badge className="credit-year" pill>{credit.year}</Badge>
+        </div>
+        <p className="credit-role">
+          <strong>{credit.role}</strong>
+        </p>
+        <p className="credit-type">
+          {credit.type || credit.venue}
+        </p>
+      </div>
+    </Col>
+  );
+};
+
+const Credits = () => {
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    document.body.classList.add("sections-page", "credits-page");
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
-    this.refs.wrapper.scrollTop = 0;
-  }
+    if (wrapperRef.current) {
+      wrapperRef.current.scrollTop = 0;
+    }
 
-  componentWillUnmount() {
-    document.body.classList.remove("sections-page");
-  }
+    return () => {
+      document.body.classList.remove("sections-page", "credits-page");
+    };
+  }, []);
 
-  renderCreditCard = (credit, index, category) => {
-    return (
-      <Col lg="4" md="6" key={index} className="mb-4">
-        <Card className="card-plain credit-card">
-          <CardBody>
-            <div className="credit-header">
-              <h4 className="credit-title">{credit.title}</h4>
-              <Badge color="primary" pill className="credit-year">
-                {credit.year}
-              </Badge>
-            </div>
-            <p className="credit-role">
-              <strong>{credit.role}</strong>
-            </p>
-            <p className="text-muted credit-type">
-              {credit.type || credit.venue}
-            </p>
-          </CardBody>
-        </Card>
-      </Col>
-    );
-  };
+  return (
+    <>
+      <ColorNavbar />
+      <div className="wrapper" ref={wrapperRef}>
+        <div className="cd-section" id="credits">
+          <div className="credits-page-modern">
+            <Container>
+              {/* Page Header */}
+              <Row className="justify-content-center mb-5">
+                <Col lg="10" className="text-center">
+                  <h1 className="page-title">Credits</h1>
+                  <div className="page-divider" />
+                  <p className="page-subtitle">
+                    A selection of film, television, and theater work
+                  </p>
+                  <Button
+                    color="primary"
+                    href="https://www.imdb.com/name/nm5684371"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-modern mt-3"
+                    size="lg"
+                  >
+                    <i className="fab fa-imdb mr-2" />
+                    View Full IMDb Profile
+                  </Button>
+                </Col>
+              </Row>
 
-  render() {
-    return (
-      <>
-        <ColorNavbar />
-        <div className="wrapper" ref="wrapper">
-          <div className="cd-section" id="credits">
-            <div className="header header-3">
-              <div className="page-header header-filter credits-page">
-                <div className="content-center">
-                  <Container>
-                    <div className="credits-header text-center mb-5">
-                      <h1 className="title">Credits</h1>
-                      <p className="description">
-                        A selection of film, television, and theater work
-                      </p>
-                      <a
-                        href="https://www.imdb.com/name/nm5684371"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-primary btn-round mt-3"
-                      >
-                        <i className="fab fa-imdb mr-2" />
-                        View Full IMDb Profile
-                      </a>
-                    </div>
-
-                    {/* Film Credits */}
-                    <div className="credits-section">
-                      <Row>
-                        <Col md="12">
-                          <h2 className="section-title">
-                            <i className="fas fa-film mr-2" />
-                            Film
-                          </h2>
-                        </Col>
-                      </Row>
-                      <Row>
-                        {creditsData.film.map((credit, index) =>
-                          this.renderCreditCard(credit, index, 'film')
-                        )}
-                      </Row>
-                    </div>
-
-                    {/* Television Credits */}
-                    <div className="credits-section mt-5">
-                      <Row>
-                        <Col md="12">
-                          <h2 className="section-title">
-                            <i className="fas fa-tv mr-2" />
-                            Television
-                          </h2>
-                        </Col>
-                      </Row>
-                      <Row>
-                        {creditsData.television.map((credit, index) =>
-                          this.renderCreditCard(credit, index, 'television')
-                        )}
-                      </Row>
-                    </div>
-
-                    {/* Theater Credits */}
-                    <div className="credits-section mt-5">
-                      <Row>
-                        <Col md="12">
-                          <h2 className="section-title">
-                            <i className="fas fa-theater-masks mr-2" />
-                            Theater
-                          </h2>
-                        </Col>
-                      </Row>
-                      <Row>
-                        {creditsData.theater.map((credit, index) =>
-                          this.renderCreditCard(credit, index, 'theater')
-                        )}
-                      </Row>
-                    </div>
-                  </Container>
+              {/* Film Credits */}
+              <div className="credits-category">
+                <div className="category-header">
+                  <h2>
+                    <i className="fas fa-film" />
+                    Film
+                  </h2>
                 </div>
+                <Row>
+                  {creditsData.film.map((credit, index) => (
+                    <CreditCard key={index} credit={credit} />
+                  ))}
+                </Row>
               </div>
-            </div>
+
+              {/* Television Credits */}
+              <div className="credits-category">
+                <div className="category-header">
+                  <h2>
+                    <i className="fas fa-tv" />
+                    Television
+                  </h2>
+                </div>
+                <Row>
+                  {creditsData.television.map((credit, index) => (
+                    <CreditCard key={index} credit={credit} />
+                  ))}
+                </Row>
+              </div>
+
+              {/* Theater Credits */}
+              <div className="credits-category">
+                <div className="category-header">
+                  <h2>
+                    <i className="fas fa-theater-masks" />
+                    Theater
+                  </h2>
+                </div>
+                <Row>
+                  {creditsData.theater.map((credit, index) => (
+                    <CreditCard key={index} credit={credit} />
+                  ))}
+                </Row>
+              </div>
+            </Container>
           </div>
         </div>
-      </>
-    );
-  }
-}
+      </div>
+    </>
+  );
+};
 
 export default Credits;

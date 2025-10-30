@@ -1,0 +1,97 @@
+// RFS (Responsive Font Sizes) - Minimal placeholder
+// This file provides basic responsive font sizing functionality
+
+@mixin rfs($fs, $important: false) {
+  @if $important {
+    font-size: $fs !important;
+  } @else {
+    font-size: $fs;
+  }
+}
+
+// Font-size mixin
+@mixin font-size($fs, $important: false) {
+  @include rfs($fs, $important);
+}
+
+// Padding mixins
+@mixin padding($padding, $important: false) {
+  @if $important {
+    padding: $padding !important;
+  } @else {
+    padding: $padding;
+  }
+}
+
+@mixin padding-top($padding, $important: false) {
+  @if $important {
+    padding-top: $padding !important;
+  } @else {
+    padding-top: $padding;
+  }
+}
+
+@mixin padding-right($padding, $important: false) {
+  @if $important {
+    padding-right: $padding !important;
+  } @else {
+    padding-right: $padding;
+  }
+}
+
+@mixin padding-bottom($padding, $important: false) {
+  @if $important {
+    padding-bottom: $padding !important;
+  } @else {
+    padding-bottom: $padding;
+  }
+}
+
+@mixin padding-left($padding, $important: false) {
+  @if $important {
+    padding-left: $padding !important;
+  } @else {
+    padding-left: $padding;
+  }
+}
+
+// Margin mixins
+@mixin margin($margin, $important: false) {
+  @if $important {
+    margin: $margin !important;
+  } @else {
+    margin: $margin;
+  }
+}
+
+@mixin margin-top($margin, $important: false) {
+  @if $important {
+    margin-top: $margin !important;
+  } @else {
+    margin-top: $margin;
+  }
+}
+
+@mixin margin-right($margin, $important: false) {
+  @if $important {
+    margin-right: $margin !important;
+  } @else {
+    margin-right: $margin;
+  }
+}
+
+@mixin margin-bottom($margin, $important: false) {
+  @if $important {
+    margin-bottom: $margin !important;
+  } @else {
+    margin-bottom: $margin;
+  }
+}
+
+@mixin margin-left($margin, $important: false) {
+  @if $important {
+    margin-left: $margin !important;
+  } @else {
+    margin-left: $margin;
+  }
+}

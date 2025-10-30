@@ -19,7 +19,6 @@
     "eslint-plugin-flowtype": "3.13.0",
     "headroom.js": "0.11.0",
     "moment": "2.29.4",
-    "node-sass": "4.14.0",
     "nouislider": "14.2.0",
     "react": "17.0.1",
     "react-bootstrap-switch": "15.5.3",
@@ -34,12 +33,13 @@
     "react-select": "3.1.0",
     "react-slick": "0.27.13",
     "react-tagsinput": "3.19.0",
-    "reactstrap": "8.7.1"
+    "reactstrap": "8.7.1",
+    "sass": "^1.93.2"
   },
   "devDependencies": {
     "@types/react": "16.9.34",
-    "typescript": "3.8.3",
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^2.2.0",
+    "typescript": "3.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -47,9 +47,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
-    "compile-sass": "node-sass src/assets/scss/blk-design-system-pro-react.scss src/assets/css/blk-design-system-pro-react.css",
-    "minify-sass": "node-sass src/assets/scss/blk-design-system-pro-react.scss src/assets/css/blk-design-system-pro-react.min.css --output-style compressed",
-    "map-sass": "node-sass src/assets/scss/blk-design-system-pro-react.scss src/assets/css/blk-design-system-pro-react.css --source-map true",
+    "compile-sass": "sass src/assets/scss/blk-design-system-pro-react.scss src/assets/css/blk-design-system-pro-react.css",
+    "minify-sass": "sass src/assets/scss/blk-design-system-pro-react.scss src/assets/css/blk-design-system-pro-react.min.css --style=compressed",
+    "map-sass": "sass src/assets/scss/blk-design-system-pro-react.scss src/assets/css/blk-design-system-pro-react.css --source-map",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build"
   },
